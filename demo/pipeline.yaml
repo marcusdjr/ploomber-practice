@@ -1,17 +1,20 @@
 tasks:
-  - source: tasks.raw.get
-    product: products/raw/get.csv
+  - source: scripts/get.py
+    product: 
+      nb: products/get.ipynb
+      data: products/get.csv
 
-  - source: tasks.features.sepal
-    product: products/features/sepal.csv
+  - source: scripts/sepal-feature.py
+    product: 
+      nb: products/sepal-feature.ipynb
+      data: products/sepal-feature.csv
 
-  - source: tasks.features.petal
-    product: products/features/petal.csv
-
-  - source: tasks.features.features
-    product: products/features/features.csv
+  - source: scripts/petal-feature.py
+    product: 
+      nb: products/petal-feature.ipynb
+      data: products/petal-feature.csv
 
   - source: scripts/fit.py
     product:
-      nb: products/report.ipynb
+      nb: products/fit.ipynb
       model: products/model.pickle
