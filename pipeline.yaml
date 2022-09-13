@@ -1,21 +1,21 @@
 task:
   - source: scripts/get.py
-    products:
+    product:
       nb: products/get.ipynb
       data: products/get.csv
 
   - source: scripts/sepal-feature.py
-    products:
+    product:
       nb: prodcuts/sepal-feature.ipynb
       data: products/sepal-feature.csv
 
   - sources: scripts/petal-feature.py
-    products: 
+    product: 
       nb: products/petal-feature.ipynb
       data: products/petal-feature.csv
 
    - sources: scripts/fit.py
-     products:
+     product:
       nb: products/fit.ipynb
       model: products/model.py   
     
