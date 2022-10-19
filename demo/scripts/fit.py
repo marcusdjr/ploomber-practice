@@ -37,7 +37,7 @@ product = None
 # %%
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn_evaluation import plot
+from sklearn_evaluation.plot import confusion_matrix
 
 # %%
 raw = pd.read_csv(upstream['get']['data'])
@@ -58,4 +58,19 @@ df = raw.join(sepal).join(petal)
 df
 
 # %%
-X = df.drop('target', axis='co
+X = df.drop('target', axis='columns')
+y = df.target
+
+# %%
+model= RandomForestClassifier()
+
+# %%
+model.fit(X,y)
+
+# %%
+y_pred = model.predict(X)
+
+# %%
+confusion_matrix(y, y_pred)
+
+# %%
