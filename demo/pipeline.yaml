@@ -1,20 +1,13 @@
+meta:
+  import_trasks_from: features.yaml
+
 tasks:
 - source: scripts/get.py
   product:
-    nb: products/get.ipynb
-    data: products/get.csv
-  
-- source: scripts/sepal-feature.py
-  product:
-    nb: products/sepal-feature.ipynb
-    data: products/sepal-feature.csv
-
-- source: scripts/petal-feature.py
-  product:
-    nb: products/petal-feature.ipynb
-    data: products/petal-feature.csv
+    nb: products/{{out}}/get.ipynb
+    data: products/{{out}}/get.csv
 
 - source: scripts/fit.py
   product:
-    nb: products/fit.ipynb
-    model: products/model.pickle
+    nb: products/{{out}}/fit.ipynb
+    model: products/{{out}}/model.pickle

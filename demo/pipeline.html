@@ -104,7 +104,7 @@
 
   // ends here - custom util/ helper functions to generate dag
 
-  const data = [{"fillcolor": "#F08080", "style": "dashed, filled", "fontname": "Helvetica", "fontsize": "16pt", "id": "get", "label": "get", "products": ["get"]}, {"fillcolor": "#F08080", "style": "dashed, filled", "fontname": "Helvetica", "fontsize": "16pt", "id": "sepal-feature", "label": "sepal-feature", "products": ["sepal-feature"]}, {"fillcolor": "#F08080", "style": "dashed, filled", "fontname": "Helvetica", "fontsize": "16pt", "id": "petal-feature", "label": "petal-feature", "products": ["petal-feature"]}, {"fillcolor": "#F08080", "style": "dashed, filled", "fontname": "Helvetica", "fontsize": "16pt", "id": "fit", "label": "fit", "products": ["fit"]}];
+  const data = [{"fillcolor": "#90EE90", "style": "filled", "fontname": "Helvetica", "fontsize": "16pt", "id": "get", "label": "get", "products": ["get"]}, {"fillcolor": "#90EE90", "style": "filled", "fontname": "Helvetica", "fontsize": "16pt", "id": "sepal-feature", "label": "sepal-feature", "products": ["sepal-feature"], "parentIds": ["get"]}, {"fillcolor": "#90EE90", "style": "filled", "fontname": "Helvetica", "fontsize": "16pt", "id": "petal-feature", "label": "petal-feature", "products": ["petal-feature"], "parentIds": ["get"]}, {"fillcolor": "#90EE90", "style": "filled", "fontname": "Helvetica", "fontsize": "16pt", "id": "fit", "label": "fit", "products": ["fit"], "parentIds": ["get", "sepal-feature", "petal-feature"]}];
   const dag = d3.dagStratify()(data);
 
   const nodeRadius = 20;

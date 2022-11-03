@@ -1,0 +1,10 @@
+  
+- source: scripts/sepal-feature.py
+  product:
+    nb: products/{{out}}/sepal-feature.ipynb
+    data: products/{{out}}/sepal-feature.csv
+
+- source: scripts/petal-feature.py
+  product:
+    nb: products/{{out}}/petal-feature.ipynb
+    data: products/{{out}}/petal-feature.csv

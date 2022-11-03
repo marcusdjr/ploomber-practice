@@ -39,6 +39,9 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn_evaluation.plot import confusion_matrix
 
+from pathlib import Path
+import pickle
+
 # %%
 raw = pd.read_csv(upstream['get']['data'])
 
@@ -72,5 +75,8 @@ y_pred = model.predict(X)
 
 # %%
 confusion_matrix(y, y_pred)
+
+# %%
+Path(product['model']).write_bytes(pickle.dumps(model))
 
 # %%

@@ -1,0 +1,16 @@
+meta:
+  import_trasks_from: features.yaml
+
+tasks:
+- source: scripts/-get-new.py
+  name: new
+  product:
+    nb: products/{{out}}/-get-new.ipynb
+    data: products/{{out}}/-get-new.csv
+
+- source: scripts/predict.py
+  product:
+    nb: products/{{out}}/predict.ipynb
+    data: products/{{out}}/predict.csv
+    params:
+      model: '{{here}}/model.pickle'
